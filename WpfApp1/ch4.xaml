@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="ch4" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+        </StackPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="1" Margin="5">
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+            <Button Content="버튼1"/>
+        </WrapPanel>
     </Grid>
 </Window>
