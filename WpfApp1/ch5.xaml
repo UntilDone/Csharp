@@ -6,13 +6,30 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="ch5" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal">
-            <Button Content="버튼1"/>
-        </StackPanel>
-    </Grid>
+    <StackPanel>
+        <Label>레이블</Label>
+        <Label Content="레이블" Background ="Salmon" Foreground="White" FontSize="15" FontWeight="Bold"/>
+        <Label>
+            <Image Width="50" 
+                   Source="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Dollar-1024.png"/>
+        </Label>
+        <Label Target="{Binding ElementName=txtName}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="50" 
+                       Source="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Dollar-1024.png"/>
+                <AccessText Text="_Name"></AccessText>
+                <TextBox Name="txtName" Width="200"/>
+                
+            </StackPanel>            
+        </Label>
+        <Label Target="{Binding ElementName=txtAge}">
+            <StackPanel Orientation="Horizontal">
+                <Image Width="50" 
+                       Source="https://cdn0.iconfinder.com/data/icons/free-daily-icon-set/512/Dollar-1024.png"/>
+                <AccessText Text="_Age"></AccessText>
+
+            </StackPanel>
+        </Label>
+        <TextBox Name="txtAge" Width="200"/>
+    </StackPanel>
 </Window>
