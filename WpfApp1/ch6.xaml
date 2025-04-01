@@ -26,13 +26,37 @@
             버튼2
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="10">
+                    <Setter Property="CornerRadius" Value="100">
                         
                     </Setter>
                 </Style>
             </Button.Resources>
         </Button>
-        
+        <Button 
+            Background="Turquoise" 
+            Foreground="White"
+            Width="200"
+            Height="100"
+            MouseDoubleClick="Button_MouseDoubleClick">
+            버튼2
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="100">
+
+                    </Setter>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="4"
+                                  Direction="330"
+                                  Color="Black"
+                                  Opacity="0.5"
+                                  BlurRadius="4"/>
+
+
+            </Button.Effect>
+        </Button>
+
         <Button></Button>
 
     </StackPanel>

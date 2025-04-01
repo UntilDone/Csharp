@@ -6,15 +6,21 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="ch7" Height="450" Width="800">
-    <StackPanel>
-        <Button
-                Background="Salmon" 
-                Foreground="White"
-                ToolTip="정보표시">
-            버튼1
-        </Button>
-        <Button></Button>
-        <Button></Button>
-
-    </StackPanel>
+    <Grid>
+        <TextBlock>
+            동해물과 <Bold>백두산</Bold>이 마르고 닳도록 
+            <LineBreak/> 
+            하느님이 보우하사 <Span Background ="Red" 
+                            Foreground="White">
+                우리나라</Span>  만세
+            <Hyperlink Name="hyper" 
+                       TextDecorations="Baseline" 
+                       MouseEnter="hyper_MouseEnter"
+                       MouseLeave="hyper_MouseLeave"
+                       RequestNavigate="hyper_RequestNavigate"
+                       NavigateUri="https://www.msn.com/" 
+                       >MSN</Hyperlink>
+            
+        </TextBlock>
+    </Grid>
 </Window>
