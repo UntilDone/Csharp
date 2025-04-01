@@ -37,7 +37,6 @@ namespace WpfApp1
 
         private void hyper_RequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
-            /*
             System.Diagnostics.ProcessStartInfo uri = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = e.Uri.AbsoluteUri,
@@ -45,8 +44,6 @@ namespace WpfApp1
             };
             
             System.Diagnostics.Process.Start(uri);
-            */
-            System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
         }
     }
 }
