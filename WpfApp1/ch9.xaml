@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfApp1.ch9"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="ch9" Height="450" Width="800">
+    <StackPanel>
+        <CheckBox Name="chb1">
+            A
+        </CheckBox>
+        <CheckBox Name="chb2" IsChecked="True">
+            B
+        </CheckBox>
+        <CheckBox Name="chb3" Checked="chb3_Checked" Unchecked="chb3_Unchecked">
+            <WrapPanel>
+                <TextBlock Name="txt">
+                    홍길<Bold>동</Bold>
+                    <Image Width ="15" Source="https://cdn3.iconfinder.com/data/icons/computing-technology/74/Computer_error_404-RAD-1024.png"/>
+                </TextBlock>
+            </WrapPanel>
+        </CheckBox>
+        <CheckBox Name="chb4">
+            <WrapPanel>
+                <TextBlock>
+                    <Image Width ="15" Source="https://cdn3.iconfinder.com/data/icons/computing-technology/74/Computer_error_404-RAD-1024.png"/>
+                    홍길<Bold>동</Bold>
+                </TextBlock>
+            </WrapPanel>
+        </CheckBox>
+        <CheckBox Name="chbAll" IsThreeState="True" Checked="chbAll_Checked" Unchecked="chbAll_Unchecked">
+            <Bold>전체선택</Bold>
+        </CheckBox>
+    </StackPanel>
+</Window>
