@@ -13,6 +13,6 @@
             </Slider>
             <Label Content="{Binding ElementName=slider1,Path=Maximum}" Name="txtRight" FontSize="20" FontWeight="Bold"></Label>
         </WrapPanel>
-        <TextBox Text="int" Width="100" Height="30" Name="txtCurrent" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" KeyDown="txtCurrent_KeyDown"></TextBox>
+        <TextBox Text="{Binding ElementName=slider1,Path=Value}" Width="100" Height="30" Name="txtCurrent" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" TextAlignment="Center" KeyDown="txtCurrent_KeyDown"></TextBox>
     </StackPanel>
 </Window>
