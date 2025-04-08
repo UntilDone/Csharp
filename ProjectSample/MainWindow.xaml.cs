@@ -6,6 +6,7 @@ using System.IO;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using System.Configuration;
 using System.Xml;
 
 namespace ProjectSample
@@ -16,22 +17,22 @@ namespace ProjectSample
     public partial class MainWindow : Window
     {
         private int currentPageIndex = 0;
-        private UserControl[] pages;
+        private System.Windows.Controls.UserControl[] pages;
 
         public MainWindow()
         {
             InitializeComponent();
 
             // 페이지 초기화
-            pages = new UserControl[]
+            pages = new System.Windows.Controls.UserControl[]
             {
                  new InstallPathPage(),
                 new WelcomePage()
 
                 // 다음 단계에서 추가할 페이지들
             };
-
             PageHost.Content = pages[currentPageIndex];
+           
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)

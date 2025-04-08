@@ -18,7 +18,7 @@ namespace ProjectSample
     /// <summary>
     /// WelcomePage.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class WelcomePage : UserControl
+    public partial class WelcomePage : System.Windows.Controls.UserControl
     {
         public WelcomePage()
         {

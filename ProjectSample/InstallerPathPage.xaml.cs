@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Forms;
 namespace InstallerWPF
 {
-    public partial class InstallPathPage : UserControl
+    public partial class InstallPathPage : System.Windows.Controls.UserControl
     {
         public string InstallPath { get; private set; }
 
@@ -35,4 +35,4 @@ namespace InstallerWPF
         }
     }
 }
-}
+
