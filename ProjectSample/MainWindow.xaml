@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectSample"
         mc:Ignorable="d"
-        Title="My Custom Installer" Height="400" Width="600">
+        Title="Desktop App Installer" Height="400" Width="600">
     <Grid>
         <!-- 페이지가 바뀔 자리 -->
         <ContentControl x:Name="PageHost"/>
