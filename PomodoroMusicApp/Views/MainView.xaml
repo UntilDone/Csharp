@@ -1,0 +1,58 @@
+﻿<Window x:Class="PomodoroMusicApp.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:PomodoroMusicApp.ViewModels"
+        mc:Ignorable="d"
+        Title="Pomodoro Music App" Height="350" Width="400">
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid Background="#FFFAF3F3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 세션 타입 -->
+        <TextBlock Text="{Binding SessionType}"
+                   FontSize="24"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Margin="0,20,0,0"
+                   Foreground="DarkSlateGray" />
+
+        <!-- 타이머 -->
+        <TextBlock Text="{Binding TimeDisplay}"
+                   FontSize="48"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Grid.Row="1"
+                   Foreground="DarkRed" />
+
+        <!-- 버튼들 -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Grid.Row="2"
+                    Margin="0,20,0,0">
+            <Button Content="Start"
+                    Command="{Binding StartCommand}"
+                    Width="80" Height="40"
+                    Background="LightGreen" />
+            <Button Content="Pause"
+                    Command="{Binding PauseCommand}"
+                    Width="80" Height="40"
+                    Background="LightYellow" />
+            <Button Content="Reset"
+                    Command="{Binding ResetCommand}"
+                    Width="80" Height="40"
+                    Background="LightCoral" />
+        </StackPanel>
+    </Grid>
+</Window>
