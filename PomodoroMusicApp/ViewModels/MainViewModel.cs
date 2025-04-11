@@ -40,8 +40,9 @@ namespace PomodoroMusicApp.ViewModels
 
         public MainViewModel()
         {
+            string musicFolderPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "Music");
             _pomodoroTimer = new PomodoroTimer();
-            _musicPlayer = new MusicPlayer("Resources/Music"); // Music 폴더 경로
+            _musicPlayer = new MusicPlayer(musicFolderPath); // Music 폴더 경로
 
             _pomodoroTimer.TimeChanged += OnTimeChanged;
             _pomodoroTimer.SessionEnded += OnSessionEnded;
