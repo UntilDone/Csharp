@@ -1,23 +1,20 @@
-﻿<Window x:Class="ChangeButtonImage.MainWindow"
+﻿<Window x:Class="AnimatedPopup.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ChangeButtonImage"
+        xmlns:local="clr-namespace:AnimatedPopup"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="400"
-        Width="1000"
-        WindowStyle="None"
+        Height="800"
+        Width="1400"
         WindowStartupLocation="CenterScreen"
-        AllowsTransparency="True">
-
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        >
     <Window.Resources>
-        <ImageBrush x:Key="Amazon_hover" ImageSource="/Assets/Amazon_Hover.png" Stretch="None"/>
-        <ImageBrush x:Key="Docker_Hover" ImageSource="/Assets/Docker_Hover.png" Stretch="None"/>
-        <ImageBrush x:Key="Github_hover" ImageSource="/Assets/Github_Hover.png" Stretch="None"/>
-        <ImageBrush x:Key="Java_hover" ImageSource="/Assets/Java_Hover.png" Stretch="None"/>
-        <ImageBrush x:Key="Close_hover" ImageSource="/Assets/Close_White.png" Stretch="None"/>
+        <!--#region HomeStyle-->
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -36,7 +33,8 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="AmazonStyle" TargetType="{x:Type Button}">
+
+        <Style x:Key="HomeStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -56,12 +54,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Amazon_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Amazon_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
@@ -73,6 +71,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--#endregion-->
+        <!--#region ProfileStyle-->
         <Style x:Key="FocusVisual1">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -91,7 +91,8 @@
         <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
-        <Style x:Key="DockerStyle" TargetType="{x:Type Button}">
+        
+        <Style x:Key="ProfileStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
@@ -111,12 +112,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Docker_Hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border1}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Docker_Hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border1}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background1}"/>
@@ -137,6 +138,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--#endregion-->
+        <!--#region SettingsStyle-->
         <SolidColorBrush x:Key="Button.Static.Background2" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border2" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#FFBEE6FD"/>
@@ -146,7 +149,8 @@
         <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
-        <Style x:Key="GithubStyle" TargetType="{x:Type Button}">
+        
+        <Style x:Key="SettingsStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background2}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
@@ -166,12 +170,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Github_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border2}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Github_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border2}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background2}"/>
@@ -192,6 +196,8 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <!--#endregion-->
+        <!--region EndButtonStyle-->
         <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
         <SolidColorBrush x:Key="Button.MouseOver.Background3" Color="#FFBEE6FD"/>
@@ -201,7 +207,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background3" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border3" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground3" Color="#FF838383"/>
-        <Style x:Key="Java" TargetType="{x:Type Button}">
+        <Style x:Key="EndButtonStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background3}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border3}"/>
@@ -221,12 +227,12 @@
                                 <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Java_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border3}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Java_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border3}"/>
+                                <Setter Property="Background" TargetName="border" Value="#3A6180"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#3A6180"/>
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background3}"/>
@@ -238,113 +244,100 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="FocusVisual4">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background4" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border4" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background4" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border4" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background4" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border4" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background4" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border4" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground4" Color="#FF838383"/>
-        <Style x:Key="CloseStyle" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual4}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background4}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border4}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Close_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border4}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Close_hover}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border4}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background4}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border4}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground4}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+        <!--#endregion-->
+        
     </Window.Resources>
     <Grid>
-        <Grid.Background>
-            <SolidColorBrush Color="#404751"/>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="100"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="175"/>
-            <ColumnDefinition Width="150"/>
-        </Grid.ColumnDefinitions>
-        <Button Style="{DynamicResource AmazonStyle}" Height="150" Width="150" Grid.Row="1" Grid.Column="1" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Amazon_Default.png" Stretch="None">
-                    
-                </ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource DockerStyle}" Height="150" Width="150" Grid.Row="1" Grid.Column="2" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Docker_Default.png" Stretch="None">
+        <Grid Margin="20" Background="#1C2F3E">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="30"
+                                  ShadowDepth="2"
+                                  Direction="90"
+                                  Color="Gray">
 
-                </ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource GithubStyle}" Height="150" Width="150" Grid.Row="1" Grid.Column="3" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Github_Default.png" Stretch="None">
+                </DropShadowEffect>
+            </Grid.Effect>
+            <StackPanel Width="100"
+                        HorizontalAlignment="Left"
+                        Background="#142128">
+                <Button Style="{DynamicResource HomeStyle}" x:Name="Home"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,180,0,20"
+                        MouseEnter="Home_MouseEnter"
+                        MouseLeave="Home_MouseLeave">
+                    <Image Source="/Assets/Home_Default.png" Stretch="Fill" Width="48" Height="48">
 
-                </ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource Java}" Height="150" Width="150" Grid.Row="1" Grid.Column="4" BorderThickness="0">
-            <Button.Background>
-                <ImageBrush ImageSource="Assets/Java_Default.png" Stretch="None">
+                    </Image>
+                </Button>
+                <Button Style="{DynamicResource ProfileStyle}" x:Name="Profile"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,0,0,10"
+                        MouseEnter="Profile_MouseEnter"
+                        MouseLeave="Profile_MouseLeave">
+                    <Image Source="/Assets/Profile_Default.png" Stretch="Fill" Width="48" Height="48">
 
-                </ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Style="{DynamicResource CloseStyle}" Height="75" Width="75" Grid.Row="0" Grid.Column="5" BorderThickness="0" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/Assets/Close_Black.png" Stretch="None">
+                        </Image>
 
-                </ImageBrush>
-            </Button.Background>
-        </Button>
+                </Button>
+                <Button Style="{DynamicResource SettingsStyle}" x:Name="Settings"
+                        Height="100"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Margin="0,10,0,0"
+                        MouseEnter="Settings_MouseEnter"
+                        MouseLeave="Settings_MouseLeave">
+                    <Image Source="/Assets/Settings_Default.png" Stretch="Fill" Width="48" Height="48">
+
+                    </Image>
+                </Button>
+
+            </StackPanel>
+            <Grid Height="80"
+                  VerticalAlignment="Top"
+                  Background="#233C4F">
+                <TextBlock Text="C# POP UP TEST"
+                           FontFamily="Sans Serif Collection"
+                           FontWeight="Bold"
+                           FontSize="26"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="#E0FFFF">
+
+                </TextBlock>
+
+                <Button Style="{DynamicResource EndButtonStyle}" Height="80" 
+                        Width="80"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Background="PaleVioletRed"
+                        BorderThickness="0"
+                        Margin="0,0,20,0"
+                        Click="Button_Click">
+                    <Image Source="/Assets/Close_White.png" Stretch="Fill" Width="28" Height="28">
+                        
+                    </Image>
+                </Button>
+            </Grid>
+            <Grid Height="80"
+                  VerticalAlignment="Bottom"
+                  Background="#233C4F">
+
+            </Grid>
+
+            <Popup x:Name="popup_uc"
+                   AllowsTransparency="True"
+                   HorizontalOffset="10"
+                   VerticalOffset="10"
+                   >
+                <Grid>
+                    <local:PopupUserControl x:Name="Header" Foreground="#E0FFFF"/>
+                </Grid>
+            </Popup>
+            
+        </Grid>
     </Grid>
 </Window>
