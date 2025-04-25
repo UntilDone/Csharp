@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CustomScrollBar"
         mc:Ignorable="d"
         Title="MainWindow" 
-        Height="680" 
+        Height="690" 
         Width="880"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -18,6 +18,10 @@
 
     <Window.Resources>
 
+        <local:ScrollLimitConverter x:Key="scrollLimitConverter">
+            
+        </local:ScrollLimitConverter>
+        
         <ImageBrush x:Key="UpArrow_Default" 
                     ImageSource="/Assets/Up_Arrow_Default.png"/>
         <ImageBrush x:Key="DownArrow_Default" 
@@ -69,7 +73,7 @@
                               Style="{StaticResource ScrollBar_UpArrow}">
                     
                 </RepeatButton>
-                <RepeatButton 
+                <RepeatButton x:Name="rb_Down"
                               Grid.Row="2"
                               Focusable="False"
                               Height="80"
@@ -107,6 +111,21 @@
                 </Track>
                 
             </Grid>
+            <ControlTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=ScrollViewer},Path=VerticalOffset}" Value="0">
+                    <Setter TargetName="rb_Up" Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+                <DataTrigger Value="True">
+                    <DataTrigger.Binding>
+                        <MultiBinding Converter="{StaticResource scrollLimitConverter}">
+                            <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=ScrollViewer}" Path="VerticalOffset"/>
+                            <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=ScrollViewer}" Path="ScrollableHeight"/>
+                        </MultiBinding>
+                    </DataTrigger.Binding>
+                    <Setter TargetName="rb_Down" Property="IsEnabled" Value="False"/>
+                </DataTrigger>
+            </ControlTemplate.Triggers>
+            
         </ControlTemplate>
         
     </Window.Resources>
@@ -121,7 +140,33 @@
 
         <Grid Grid.Row="0"
               Background="Goldenrod">
-            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Header_Title.png" Stretch="None"/>
+                    </Grid.Background>
+                    
+                </Grid>
+
+                <Grid Grid.Column="2">
+                    <Button x:Name="Close_Btn"
+                            Grid.Column="2"
+                            Height="80"
+                            Width="80"
+                            Style="{DynamicResource Close_btn}"
+                            Click="Close_Btn_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Assets/Close_Icon_Default.png" Stretch="None"/>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="1"
@@ -152,7 +197,92 @@
                     <RowDefinition Height="250"/>
                     <RowDefinition Height="250"/>
                 </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img1.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+
+                <Grid Grid.Row="1" Grid.Column="2" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img2.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="3" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img3.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img4.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="2" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img5.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="2" Grid.Column="3" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img6.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img7.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="2" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img8.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="3" Grid.Column="3" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img9.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img10.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="2" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img11.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="4" Grid.Column="3" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img12.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img13.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="2" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img14.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="5" Grid.Column="3" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img15.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+                <Grid Grid.Row="6" Grid.Column="1" Margin="10">
+                    <Grid.Background>
+                        <ImageBrush ImageSource="/Assets/Img16.png" Stretch="Fill"/>
+                    </Grid.Background>
+                </Grid>
+
             </Grid>
+            
+            
             
         </ScrollViewer>
     </Grid>
