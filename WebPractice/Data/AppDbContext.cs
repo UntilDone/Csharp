@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using WebPractice.Models;
+
 namespace WebPractice.Data
 {
     public class AppDbContext : DbContext
