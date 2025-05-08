@@ -13,12 +13,56 @@
                   Width="65"
                   Background="#2E333A"
                   >
-                <StackPanel x:Name="st_pn1">
+                <StackPanel x:Name="st_pnl">
                     <Grid Height="90">
-                        <StackPanel>
-                          
-                        </StackPanel>
+                        <ToggleButton x:Name="Tg_Btn"
+                                      VerticalAlignment="Center"
+                                      HorizontalAlignment="Left"
+                                      Margin="18,-20,0,0"
+                                      Height="30"
+                                      Width="30"
+                                      BorderThickness="0">
+                            <ToggleButton.Background>
+                                <ImageBrush ImageSource="/Assets/tgBtn_default.png"
+                                            Stretch="None">
+                                    
+                                </ImageBrush>
+                            </ToggleButton.Background>
+                            <ToggleButton.Triggers>
+                                
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HideStackPanel">
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="230" To="65"
+                                                Duration="0:0:0.2">
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="ShowStackPanel">
+                                            <DoubleAnimation
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="65" To="230"
+                                                Duration="0:0:0.3">
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                
+                            </ToggleButton.Triggers>
+                            
+                        </ToggleButton>
                     </Grid>
+                    
                 </StackPanel>
             </Grid>
         </Grid>
