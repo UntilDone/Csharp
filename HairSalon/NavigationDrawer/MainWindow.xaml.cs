@@ -58,5 +58,10 @@ namespace NavigationDrawer
         {
             Tg_Btn.IsChecked = false;
         }
+
+        private void CloseBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
