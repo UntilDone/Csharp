@@ -16,7 +16,9 @@
                 <StackPanel x:Name="st_pn1">
                     <Grid Height="90">
                         <StackPanel>
-                            
+                            <Gird>
+                                
+                            </Gird>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
