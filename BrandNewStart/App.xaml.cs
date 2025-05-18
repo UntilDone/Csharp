@@ -9,6 +9,7 @@ namespace BrandNewStart
     /// </summary>
     public partial class App : Application
     {
+
     }
 
 }
