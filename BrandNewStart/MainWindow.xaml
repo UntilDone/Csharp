@@ -7,8 +7,16 @@
         xmlns:local="clr-namespace:BrandNewStart"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="600">
-    <Grid>
-        
+    <Grid Margin="20">
+        <TextBlock Text="Installing..." Foreground="White" FontSize="16"/>
 
+        <TextBlock Text="{Binding CurrentPackage}" Margin="0,40,0,0" Foreground="LightGray"/>
+        <ProgressBar Value="{Binding PackageProgress}" Height="10" Margin="0,60,0,0"/>
+
+        <TextBlock Text="Overall Progress" Margin="0,100,0,0" Foreground="LightGray"/>
+        <ProgressBar Value="{Binding OverallProgress}" Height="10" Margin="0,120,0,0"/>
+
+        <Button Content="Cancel" Width="80" Height="30" Margin="0,170,0,0" 
+                HorizontalAlignment="Center" Click="Cancel_Click"/>
     </Grid>
 </Window>
