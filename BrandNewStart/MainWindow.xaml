@@ -17,6 +17,6 @@
         <ProgressBar Value="{Binding OverallProgress}" Height="10" Margin="0,120,0,0"/>
 
         <Button Content="Cancel" Width="80" Height="30" Margin="0,170,0,0" 
-                HorizontalAlignment="Center" Click="Cancel_Click"/>
+                HorizontalAlignment="Center" Click="Button_Click"/>
     </Grid>
 </Window>
